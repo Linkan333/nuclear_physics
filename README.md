@@ -1,0 +1,1 @@
+This is just a simple project for me to learn a little better using coding combined with physics since i have a hard time in just that. I want to be able to study comp sci later so i really need to make this course
