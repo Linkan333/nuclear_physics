@@ -12,8 +12,28 @@ void atomicMap(std::unordered_map<std::string, double>& atomicList) {
         {"Neutron", 1.674927e-27},
         {"Elementar", 1.602176634e-19},
         {"Nucleon", 1.6726e-27},
-        {"u", 1.660539e-27} // Atomic mass
+        {"u", 1.660539e-27}, // Atomic mass
+        {"eV", 1.602e-19}
     };
+}
+
+//void electronVolt() {
+    // eV (Electron Volt) i am going to describe the charge for one Electron
+    // We also define it with the prefix J at the end since this is so much it defines as Joule instead.
+    // The electorn volt is the amount of energy gained or lost by a single electron when it moves through an electric potential difference of one volt. Hence it has a value of one volt which is 1 J/C (Joule/Coloumb) multiplied by the elementary charge as described above in the unordered_map 
+
+//}
+
+void energyConsumption() {
+    double kW;
+    float time;
+    // For example if a moter uses 50 kW for 2 hours Energy = 50 x 2 = 100 kWh we can make a simple calculator by using this math:
+    std::cout << "Enter the motor use amount: " << std::endl;
+    std::cin >> kW;
+    std::cout << "Enter the amount of time: " << std::endl;
+    std::cin >> time;
+    int energy = kW * time;
+    std::cout << energy << " kWh" << std::endl;
 }
 
 void radioactiveDecay() {
@@ -21,6 +41,7 @@ void radioactiveDecay() {
     // Formula: (N = N0e-λt)
     double N_0; // Radioactive cores ex: uran-235 (92 protons and 143 neutrons wich we can use the atomics neuclon algorithm for)
     double t = 1.0e9; // Over t (time) this example has 1*10^9 wich is 1 billion years
+ 
     double T_half = 7.038e8; // Half-life of uranium-235 in years (~703.8 million years)
     double lambda = log(2.0) / T_half;
     double N;
@@ -59,8 +80,8 @@ int main() {
     int A = N + Z;
     std::cout << "\nCount of Nucleons: " << A << std::endl;
 
-
+    
     radioactiveDecay();
-
+    energyConsumption();
     return 0;
 }
